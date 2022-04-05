@@ -52,9 +52,26 @@ const getDb = async () => {
     return DBInfo;
 }
 
+const orderDbInfo = async () =>{
+    const DBinfo = await getDb();
+    const orderArray = DBinfo.map(dog=>{
+        return{
+            id: dog.id,
+            name: dog.name,
+            weight: dog.weight,
+            image: dog.image,
+            height: dog.height,
+            life_span: dog.life_span,
+            generated_by_user: dog.generated_by_user,
+            temperament: dog.temperaments.map(el=>el.name).join(', ')
+        }
+    })
+    return orderArray
+}
+
 const getAllData = async () =>{
     const api = await getApi();
-    const db = await getDb();
+    const db = await orderDbInfo();
     return api.concat(db);
 }
 
@@ -73,7 +90,7 @@ router.get('/', async (req,res)=>{
     else{
         const allDogs = await getAllData();
         res.status(200).send(allDogs)
-    }
+    } 
 })
 
 router.get('/:idRaza', async (req,res)=>{

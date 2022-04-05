@@ -22,7 +22,7 @@ const getApi = async() => {
 };
 
 router.get('/', async (req, res)=>{
-    const allTemperaments = await Temperament.findAll();;
+    const allTemperaments = await Temperament.findAll();
     res.send(allTemperaments)
 })
 
