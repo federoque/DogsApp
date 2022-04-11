@@ -108,6 +108,10 @@ export default function DogCreate(){
          if(!input.image){
             errors.image = "Image URL is required"
         }
+
+        if(input.image.length>254){
+            errors.image = "Too long URL image"
+        }
  
         if((!input.image.includes('https://') && !input.image.includes('http://')) || !input.image.includes('.')){
             errors.image = "Enter a valid Image URL"
