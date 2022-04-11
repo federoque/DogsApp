@@ -1,11 +1,11 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { NavLink } from "react-router-dom";
 import { loadingOn, getDog } from "../actions";
 import image from '../imgs/loading.gif'
 import { useParams } from "react-router-dom";
-import TemperamentDetail from "./TemperamentDetail";
+import DogDetail from "./DogDetail";
+import s from '../styles/CardDetail.module.css'
 
 export default function CardDetail(){
 
@@ -16,36 +16,26 @@ export default function CardDetail(){
     const loading = useSelector(state=> state.loading)
 
     useEffect(() => {
-        dispatch(loadingOn())
+        dispatch(loadingOn());
+    }, [dispatch]);
+
+    useEffect(()=>{
         dispatch(getDog(params.id))
-    }, []);
-
-    var temperament;
-    if(dog[0].temperament){
-         temperament = dog[0].temperament.split(', ');
-    }
-
+    }, [dispatch, params.id]);
+    
     if(loading){
         return(
-            <img src={image} alt="LOADING"></img>
+        <div className={s.divLoad}>
+            <img className={s.loading} src={image} alt="loading"></img>
+        </div>
         )
     }
-  return(
-     <div>
-         <h1>{dog[0].name}</h1>
-         <img src={dog[0].image}></img>
-         <p>Weight: {dog[0].weight} pounds</p>
-         <p>Height: {dog[0].height} inches</p>
-         <p>Life span: {dog[0].life_span}</p>
-         <p>Temperament:</p>
-         {!temperament ? <p>No information</p> : temperament.map(el=>{
-             return (
-                <TemperamentDetail temperament={el} />
-             )
-         })}
-         <NavLink to='/home'>
-             <button>Home</button>
-         </NavLink>
-     </div>
-  )
+
+    return(
+        <div className={s.all}>
+            <div className={s.detail}>
+            {dog[0]&&<DogDetail name={dog[0].name} image={dog[0].image} weight={dog[0].weight} height={dog[0].height} life_span={dog[0].life_span} temperament={dog[0].temperament && dog[0].temperament.split(', ')}/>}
+            </div>
+        </div>
+    )
 }

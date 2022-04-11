@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
+@import 'var.css';
+
+.input{
+    width: 20vw;
+    font-family: var(--font);
+    font-weight: bold;
+    font-size: 1.3rem;
+    background-color: rgb(230,230,230);
+    text-align: left;
+}
+
+.button{
+    background-color: rgb(255, 255, 0);
+    border: 2px solid var(--font);
+    border-radius: 4px;
+    padding: 0 0.4rem 0 0.4rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: var(--font);
+    margin-left: 0.6rem;
+    border: 2px solid rgb(255,255,0);
+    transition: 0.4s;
+}
+
+.button:hover{
+    background-color: var(--letters);
+    border: 2px solid rgb(255,255,0);
+    color: rgb(255, 255, 0);
+    text-shadow:  2px 1px 1px var(--font);
+    box-shadow: 3px 1.5px 1.5px var(--letters);
+    cursor: pointer
+}

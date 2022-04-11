@@ -1,0 +1,39 @@
+.all{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 50vw;
+    height: 100vh;
+    animation: change;
+    animation-iteration-count: infinite;
+    animation-duration: 30s;
+    background-repeat: no-repeat;
+    background-size:cover;
+    transform: translateX(50vw);
+}
+
+@keyframes change{
+    0% {background-image: url('dog6.png');}
+    20% {background-image: url('dog7.png');}
+    40% {background-image: url('dog8.png');}
+    60% {background-image: url('dog9.png');}
+    80% {background-image: url('dog10.png');}
+    100% {background-image: url('dog6.png');}
+}
+
+.detail{
+    width: 50vw;
+    height: 100vh;
+    background: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,1));
+}
+
+.divLoad{
+    background-image: url('bones.jpg');
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loading{
+    height: 50vh;
+}

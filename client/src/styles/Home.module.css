@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
+@import 'var.css';
+
+.all{
+    height: 100vh;
+    background-image: url('bones.jpg');
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--main); 
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-bottom: 2px solid var(--letters);
+    height: 8vh;
+}
+
+.h1{
+    font-family: var(--font);  
+    color: var(--letters); 
+    margin-left: 15px;
+    font-size: 2.3rem;
+    animation-name: logo;
+    animation-iteration-count: infinite;
+    animation-duration: 30s;
+    
+}
+
+@keyframes logo{
+   0% {transform: rotateY(0deg);} 
+   5% {transform: rotateY(-180deg);}
+   10% {transform: rotateY(-360deg);}
+   100% {transform: rotateY(0deg);}
+}
+
+.link{
+    font-family: var(--font); 
+    text-decoration: none;
+    margin-right: 30px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    background-color: rgb(255, 255, 0);
+    border: 2px solid var(--font);
+    border-radius: 10px;
+    padding: 0.4rem;
+    transition: 0.4s;
+}
+
+.link:visited{
+    color: var(--font)
+}
+
+.link:hover{
+    background-color: var(--letters);
+    border: 2px solid rgb(255,255,0);
+    color: rgb(255, 255, 0);
+    box-shadow: 3px 1.5px 1.5px var(--letters);
+    text-shadow:  2px 1px 1px var(--font);
+}
+
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    height: 82vh;
+}
+
+.filters{
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    padding: 3px 0 3px 0;
+}
+
+.filters span{
+    font-family: var(--font);
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 1.2rem 0 1.2rem;
+    background-color: rgba(255,255,255,0.2);
+}
+
+.filters select{
+    font-family: var(--font);
+    width: 6rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 2px 0 2px 0;
+    border-radius: 3px;
+    width: 8vw;
+
+}
+
+.filters select:hover{
+    cursor: pointer;
+}
+
+.filters option {
+    font-family: var(--font);
+    font-weight: bold;
+    font-size: 0.9rem;
+    
+}
+
+.filters button{
+    margin-left: 1rem;
+    font-family: var(--font);
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.5px 10px 0.5px 10px;
+    transition: 0.4s;
+    border-radius: 3px;
+}
+
+.filters button:hover{
+    cursor: pointer;
+    background-color: var(--main);
+}
+
+.paginate{
+    display: flex;
+    justify-content: center;
+}
+
+.paginate button{
+    width: 6rem;
+    font-family: var(--font);
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0 5px 2px 5px;
+    transition: 0.4s;
+    border-radius: 3px;
+}
+
+.paginate button:hover{
+    cursor: pointer;
+    background-color: var(--main);
+}
+
+.paginate span{
+    font-family: var(--font);
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 1rem 0 1rem;
+    border-bottom: 1px solid var(--letters);
+}
+
+.divLoad{
+    background-image: url('bones.jpg');
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loading{
+    height: 50vh;
+}
+
+.dogNotFound{
+    font-size: 4rem;
+    margin:auto;
+    font-family: var(--letters);
+    margin-top: 4rem;
+    text-shadow: 1rem 1rem 1rem var(--main);
+}

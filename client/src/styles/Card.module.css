@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
+@import 'var.css';
+
+.card{
+    width: 20vw;
+    height: 39vh;
+    border: 3px solid var(--letters);
+    background-color: rgb(230,230,230);
+    border-radius: 25px;
+    overflow: hidden;
+    transition: 0.5s;
+    text-decoration: none;
+    margin: 20px 10px 0 10px;
+}
+
+.link{
+    text-decoration: none;
+    color: var(--letters);
+}
+
+.link:visited{
+    color: var(--letters);
+}
+
+.card:hover{
+    transform: translate(2%,-5%);
+    cursor: pointer;
+    box-shadow: 15px 10px 10px var(--letters); 
+}
+
+.card:hover .h3, .card:hover .p{
+    text-shadow: 1px 1px 1px var(--main);
+}
+
+.img{
+    height: 55%;
+    width: 100%;
+    object-fit: fill;
+    border-radius: 5%;
+}
+
+.h3{
+    font-size: 1.6rem;
+    font-family: var(--font);
+    font-weight: bold;
+    margin: 0;
+}
+
+.p{
+    font-size: 1.2rem;
+    font-family: var(--font);
+    font-weight: bold;
+    margin: 0;
+}
+
+.temperament{
+    display: flex;
+    height: 25%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
