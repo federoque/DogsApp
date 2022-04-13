@@ -22,7 +22,7 @@ export default function CardDetail(){
     useEffect(()=>{
         dispatch(getDog(params.id))
     }, [dispatch, params.id]);
-    
+
     if(loading){
         return(
         <div className={s.divLoad}>

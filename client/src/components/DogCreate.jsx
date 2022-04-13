@@ -51,6 +51,10 @@ export default function DogCreate(){
         if(!/^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/.test(input.name)){
             errors.name = "Name is required. Allows letters and spaces"
         }
+
+        if(/^\s/.test(input.name)){
+            errors.name = "First character cannot be a space"
+        }
         
         if(allDogs.filter(el=> el.name.toLowerCase() === input.name.toLowerCase()).length > 0 ){
             errors.name = "Name is already in use"

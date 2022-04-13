@@ -5,23 +5,6 @@ const {YOUR_API_KEY} = process.env
 const axios = require('axios');
 const {Dog, Temperament} = require('../db')
 
-// Imagen
-// Nombre
-// Temperamento
-// Peso
-
-// const getApi = axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${YOUR_API_KEY}`)
-//     .then(response=> response.data)
-//     .then(data=> data.map(dog => {
-//         return{
-//             name: dog.name,
-//             temperament: dog.temperament,
-//             weight: dog.weight.metric,
-//             image: dog.image.url
-//         }
-//     }));
-
-//     getApi.then(r=>console.log(r))
 
 const getApi = async() => {
     const apiURL = await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${YOUR_API_KEY}`)
@@ -120,6 +103,7 @@ router.get('/:idRaza', async (req,res)=>{
         }
     }
 })
+
 
 
 
