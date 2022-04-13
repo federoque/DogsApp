@@ -45,9 +45,13 @@ export default function DogCreate(){
 
         //validate name
         if(!input.name){
-            errors.name = "Name is required"
+            errors.name = "Name is required. Allows letters and spaces"
         }
 
+        if(!/^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/.test(input.name)){
+            errors.name = "Name is required. Allows letters and spaces"
+        }
+        
         if(allDogs.filter(el=> el.name.toLowerCase() === input.name.toLowerCase()).length > 0 ){
             errors.name = "Name is already in use"
         }

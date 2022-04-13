@@ -15,7 +15,7 @@ export default function Card({name, image, weight, temperament, id}){
                 <img className={s.img} src={image} alt="not found" />
                 <h3 className={s.h3}>{name}</h3>
                 <p className={s.p}>Weight: {weight} pounds</p>
-                {!temperament && <p className={s.p} style={{marginTop:"1rem"}}>Temperament: No information</p>}
+                {!temperament && <p className={s.p}>Temperament: No information</p>}
                 {temperament && 
                     <div className={s.temperament}>
                     {

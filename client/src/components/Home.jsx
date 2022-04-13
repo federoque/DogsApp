@@ -100,10 +100,6 @@ export default function Home(){
         setCurrentPage(prev=> 1)
     }
 
-    function handleRefresh(e){
-        window.location.reload()
-    }
-
     if(loading){
         return (
             <div className={s.divLoad}>
@@ -153,7 +149,6 @@ export default function Home(){
                         )
                     })}
                 </select>
-                <button onClick={handleRefresh}>Refresh filters</button>
                 </div>
             </div>
             <div className={s.paginate}>

@@ -116,7 +116,7 @@ router.get('/:idRaza', async (req,res)=>{
             res.status(200).send(filterDog)
         }
         else{
-            res.status(404).send('Dog ID not found')
+            res.status(200).send([{name: 'Dog not found'}])
         }
     }
 })

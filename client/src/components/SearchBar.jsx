@@ -19,10 +19,10 @@ function handleSubmit(e){
     setSearch('')
 }
     return(
-        <div>
+        <div onSubmit={handleSubmit}>
             <form>
                 <input className={s.input} type='text' placeholder="Search..." onChange={handleSearch}/>
-                <button className={s.button} type= 'button' onClick={handleSubmit}>Search</button>
+                <button className={s.button} type='submit' >Search</button>
             </form>
         </div>
     )

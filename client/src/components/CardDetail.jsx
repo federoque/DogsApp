@@ -31,6 +31,12 @@ export default function CardDetail(){
         )
     }
 
+    if(dog[0] && dog[0].name === 'Dog not found'){
+        return(
+            <div>Dog Id not Found</div>
+        )
+    }
+
     return(
         <div className={s.all}>
             <div className={s.detail}>

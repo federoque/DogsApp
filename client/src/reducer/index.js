@@ -92,13 +92,13 @@ export default function reducer(state = initialState, action) {
         }
 
             function SortArrayAsc(x, y){
-                if (x.name < y.name) {return -1;}
-                if (x.name > y.name) {return 1;}
+                if (x.name.toLowerCase() < y.name.toLowerCase()) {return -1;}
+                if (x.name.toLowerCase() > y.name.toLowerCase()) {return 1;}
                 return 0;
             }
             function SortArrayDesc(x, y){
-                if (x.name < y.name) {return 1;}
-                if (x.name > y.name) {return -1;}
+                if (x.name.toLowerCase() < y.name.toLowerCase()) {return 1;}
+                if (x.name.toLowerCase() > y.name.toLowerCase()) {return -1;}
                 return 0;
             }
             if(action.payload.alphabeticalOrder === 'A-Z'){
