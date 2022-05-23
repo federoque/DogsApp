@@ -58,4 +58,20 @@
     background-color: rgb(230,230,230);
 }
 
+.buttonDelete{
+    width: 8rem;
+    font-family: var(--font);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 5px 2px 5px;
+    transition: 0.4s;
+    border-radius: 3px;
+    background-color: var(--main);
+}
+
+.buttonDelete:hover{
+    cursor: pointer;
+    background-color: rgb(228, 13, 13);
+}
+
 

@@ -65,4 +65,13 @@ export function loadingOn(){
      }
  }
 
+ export function deleteBreed(id){
+     return async function(dispatch){
+      await axios.delete('http://localhost:3001/dogs?id='+id)
+         return{
+             type: 'DELETE_BREED'
+         }
+     }
+ }
+
 

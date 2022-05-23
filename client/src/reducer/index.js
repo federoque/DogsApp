@@ -145,5 +145,11 @@ export default function reducer(state = initialState, action) {
         }
     }
 
+    if(action.type === 'DELETE_BREED'){
+        return{
+            ...state
+        }
+    }
+
     return state;
 }

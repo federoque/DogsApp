@@ -104,6 +104,13 @@ router.get('/:idRaza', async (req,res)=>{
     }
 })
 
+router.delete('/', async(req, res)=>{
+    let {id} = req.query
+    await Dog.destroy({where: {id: id}})
+    res.send("Breed deleted")
+})
+
+
 
 
 

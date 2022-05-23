@@ -23,6 +23,7 @@ export default function CardDetail(){
         dispatch(getDog(params.id))
     }, [dispatch, params.id]);
 
+
     if(loading){
         return(
         <div className={s.divLoad}>
@@ -40,7 +41,7 @@ export default function CardDetail(){
     return(
         <div className={s.all}>
             <div className={s.detail}>
-            {dog[0]&&<DogDetail name={dog[0].name} image={dog[0].image} weight={dog[0].weight} height={dog[0].height} life_span={dog[0].life_span} temperament={dog[0].temperament && dog[0].temperament.split(', ')}/>}
+            {dog[0]&&<DogDetail name={dog[0].name} image={dog[0].image} weight={dog[0].weight} height={dog[0].height} life_span={dog[0].life_span} temperament={dog[0].temperament && dog[0].temperament.split(', ')} generated = {dog[0].generated_by_user} id = {dog[0].id}/>}
             </div>
         </div>
     )

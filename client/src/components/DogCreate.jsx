@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { createBreed, getDogs, getTemperaments } from "../actions";
 import s from '../styles/DogCreate.module.css'
+import Swal from 'sweetalert2'
 
 export default function DogCreate(){
     
@@ -172,7 +173,7 @@ export default function DogCreate(){
             image: input.image,
             temperament: input.temperament
         }))
-        alert('Breed has been created')
+     
         setInput(prev=>{
             return {
                 name: '',
@@ -186,7 +187,14 @@ export default function DogCreate(){
                 temperament: []
             }
         })
-        navigate('/home')
+        Swal.fire({
+            icon:'success',
+            title:'Breed has been created'
+        }
+          )
+          setTimeout(() => {
+            navigate('/home')
+        }, 2000);
     }
 
     return(
